@@ -4,7 +4,14 @@
   "sourceRoot": "react-lib/src",
   "projectType": "library",
   "tags": [],
-  "// targets": "to see all targets run: nx show project react-lib --web",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
