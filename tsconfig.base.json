@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@atichatdev/helpers": ["helpers/src/index.ts"]
+      "@atichatdev/helpers": ["helpers/src/index.ts"],
+      "@atichatdev/react-lib": ["react-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

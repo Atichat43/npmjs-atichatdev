@@ -10,11 +10,17 @@
   "targetDefaults": {
     "@nx/vite:build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^default"
+      ]
     }
   },
   "release": {
+    "projectsRelationship": "independent",
     "version": {
       "preVersionCommand": "pnpm dlx nx run-many -t build"
     }
@@ -34,7 +40,14 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint",
-        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
+        "extensions": [
+          "ts",
+          "tsx",
+          "js",
+          "jsx",
+          "html",
+          "vue"
+        ]
       }
     },
     {
@@ -57,7 +70,8 @@
       },
       "library": {
         "style": "css",
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
       }
     }
   }
