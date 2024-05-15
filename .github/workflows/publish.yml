@@ -3,7 +3,8 @@ name: Publish
 on:
   push:
     tags:
-      - v*.*.*
+      - 'helpers@*.*.*'
+      - 'react-lib@*.*.*'
 
 jobs:
   test:
