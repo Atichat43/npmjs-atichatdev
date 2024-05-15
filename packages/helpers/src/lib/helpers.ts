@@ -11,8 +11,6 @@ export const logVersion = (version: string): void => {
   console.log(`Version: ${version}`);
 };
 
-export const isString = (value: unknown): boolean => typeof value === 'string';
-
 export const isNumber = (value: unknown): boolean => typeof value === 'number';
 
 export const isObject = (value: unknown): boolean =>
@@ -22,3 +20,6 @@ export const isFunction = (value: unknown): boolean =>
   typeof value === 'function';
 
 export const isArray = (value: unknown): boolean => Array.isArray(value);
+
+import { isString } from 'lodash';
+export { isString };
