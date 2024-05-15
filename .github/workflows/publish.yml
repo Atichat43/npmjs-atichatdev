@@ -7,15 +7,12 @@ on:
       - 'helpers@*.*.*'
       - 'react-lib@*.*.*'
 
-permissions:
-  actions: read
-  contents: read
-
 jobs:
   test:
     name: Publish
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       contents: read
       id-token: write # needed for provenance data generation
     timeout-minutes: 15
