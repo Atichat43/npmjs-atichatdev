@@ -1,3 +1,15 @@
+## 2.1.1 (2024-05-15)
+
+
+### 🩹 Fixes
+
+- bring isNumber back ([085d8a6](https://github.com/Atichat43/npmjs-atichatdev/commit/085d8a6))
+
+
+### ❤️  Thank You
+
+- Atichat Lappanopakon
+
 ## 2.1.0 (2024-05-15)
 
 
