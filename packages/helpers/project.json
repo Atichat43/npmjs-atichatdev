@@ -19,7 +19,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/helpers",
+        "outputPath": "dist/packages/helpers",
         "main": "packages/helpers/src/index.ts",
         "tsConfig": "packages/helpers/tsconfig.lib.json",
         "assets": [

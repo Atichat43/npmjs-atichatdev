@@ -19,7 +19,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/react-lib",
+        "outputPath": "dist/packages/react-lib",
         "main": "packages/react-lib/src/index.ts",
         "tsConfig": "packages/react-lib/tsconfig.lib.json"
       }
