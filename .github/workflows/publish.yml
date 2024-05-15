@@ -37,6 +37,16 @@ jobs:
 
       - run: pnpm nx run-many -t build -p helpers react-lib
 
+      - name: Configure npm for authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
+          echo "access=public" >> ~/.npmrc
+
+      - name: Verify npm authentication
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
       - name: Publish packages
         run: pnpm nx release publish -p helpers react-lib
         shell: bash
