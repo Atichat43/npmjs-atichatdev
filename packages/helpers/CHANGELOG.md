@@ -1,3 +1,17 @@
+## 2.4.0 (2024-05-15)
+
+
+### 🚀 Features
+
+- add null
+
+- add lodash in helpers
+
+
+### 🩹 Fixes
+
+- remove is null
+
 ## 2.3.0 (2024-05-15)
 
 
