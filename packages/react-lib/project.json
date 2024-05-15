@@ -1,9 +1,8 @@
 {
   "name": "react-lib",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "react-lib/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react-lib/src",
   "projectType": "library",
-  "tags": [],
   "release": {
     "version": {
       "generatorOptions": {
@@ -12,6 +11,7 @@
       }
     }
   },
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -20,8 +20,8 @@
       ],
       "options": {
         "outputPath": "dist/react-lib",
-        "main": "react-lib/src/index.ts",
-        "tsConfig": "react-lib/tsconfig.lib.json"
+        "main": "packages/react-lib/src/index.ts",
+        "tsConfig": "packages/react-lib/tsconfig.lib.json"
       }
     },
     "nx-release-publish": {

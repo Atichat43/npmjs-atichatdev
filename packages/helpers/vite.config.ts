@@ -1,16 +1,14 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../node_modules/.vite/react-lib',
+  cacheDir: '../../node_modules/.vite/helpers',
 
   plugins: [
-    react(),
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
@@ -26,7 +24,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../dist/react-lib',
+    outDir: '../../dist/helpers',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -34,7 +32,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'react-lib',
+      name: 'helpers',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -42,21 +40,21 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [],
     },
   },
 
   test: {
     globals: true,
     cache: {
-      dir: '../node_modules/.vitest/react-lib',
+      dir: '../../node_modules/.vitest/helpers',
     },
-    environment: 'jsdom',
+    environment: 'node',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../coverage/react-lib',
+      reportsDirectory: '../../coverage/helpers',
       provider: 'v8',
     },
   },

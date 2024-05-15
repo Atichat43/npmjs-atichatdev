@@ -1,7 +1,7 @@
 {
   "name": "helpers",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "helpers/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/helpers/src",
   "projectType": "library",
   "release": {
     "version": {
@@ -15,12 +15,16 @@
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/helpers",
-        "main": "helpers/src/index.ts",
-        "tsConfig": "helpers/tsconfig.lib.json",
-        "assets": ["helpers/*.md"]
+        "main": "packages/helpers/src/index.ts",
+        "tsConfig": "packages/helpers/tsconfig.lib.json",
+        "assets": [
+          "packages/helpers/*.md"
+        ]
       }
     },
     "nx-release-publish": {
