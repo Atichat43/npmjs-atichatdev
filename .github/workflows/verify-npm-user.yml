@@ -1,0 +1,36 @@
+name: Verify npm Authentication
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-auth:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      actions: 'read'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Verify npm authentication 1
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: Configure npm for authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
+
+      - name: Verify npm authentication 2
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
