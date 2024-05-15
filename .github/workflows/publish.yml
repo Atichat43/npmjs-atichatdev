@@ -29,14 +29,15 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+
       - run: pnpm install --frozen-lockfile
 
-      - name: Print Environment Info
-        run: pnpm exec npx nx report
-        shell: bash
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm nx run-many -t build -p helpers react-lib
 
       - name: Publish packages
-        run: pnpm exec npx nx release publish
+        run: pnpm nx release publish -p helpers react-lib
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
