@@ -7,6 +7,10 @@ on:
       - 'helpers@*.*.*'
       - 'react-lib@*.*.*'
 
+permissions:
+  actions: read
+  contents: read
+
 jobs:
   test:
     name: Publish
