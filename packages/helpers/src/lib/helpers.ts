@@ -17,3 +17,6 @@ export const isNumber = (value: unknown): boolean => typeof value === 'number';
 
 export const isObject = (value: unknown): boolean =>
   typeof value === 'object' && value !== null;
+
+export const isFunction = (value: unknown): boolean =>
+  typeof value === 'function';
