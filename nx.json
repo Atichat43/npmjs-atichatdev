@@ -16,7 +16,10 @@
       "inputs": [
         "default",
         "^default"
-      ]
+      ],
+      "options": {
+        "generatePackageJson": true
+      }
     }
   },
   "release": {
