@@ -1,3 +1,15 @@
+## 2.3.0 (2024-05-15)
+
+
+### 🚀 Features
+
+- add is array
+
+
+### ❤️  Thank You
+
+- Atichat Lappanopakon
+
 ## 2.2.0 (2024-05-15)
 
 
