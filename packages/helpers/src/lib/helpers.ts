@@ -22,3 +22,5 @@ export const isFunction = (value: unknown): boolean =>
   typeof value === 'function';
 
 export const isArray = (value: unknown): boolean => Array.isArray(value);
+
+export const isNull = (value: unknown): boolean => value === null;
