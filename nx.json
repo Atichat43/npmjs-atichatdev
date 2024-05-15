@@ -32,8 +32,50 @@
       "preVersionCommand": "pnpm dlx nx run-many -t build",
       "conventionalCommits": true
     },
+    "conventionalCommits": {
+      "types": {
+        "deps": {
+          "semverBump": "minor",
+          "changelog": {
+            "title": "Dependency Updates"
+          }
+        },
+        "fix": {
+          "semverBump": "patch"
+        },
+        "perf": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Performance Improvements"
+          }
+        },
+        "styles": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Styles"
+          }
+        },
+        "chore": {
+          "semverBump": "patch",
+          "changelog": false
+        },
+        "docs": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false,
+            "title": "Documentation Changes"
+          }
+        }
+      }
+    },
     "changelog": {
-      "projectChangelogs": true
+      "projectChangelogs": {
+        "renderOptions": {
+          "commitReferences": true,
+          "versionTitleDate": true,
+          "authors": false
+        }
+      }
     }
   },
   "plugins": [
