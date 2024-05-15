@@ -10,3 +10,5 @@ export const isBoolean = (value: unknown): boolean =>
 export const logVersion = (version: string): void => {
   console.log(`Version: ${version}`);
 };
+
+export const isString = (value: unknown): boolean => typeof value === 'string';
