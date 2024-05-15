@@ -21,5 +21,5 @@ export const isFunction = (value: unknown): boolean =>
 
 export const isArray = (value: unknown): boolean => Array.isArray(value);
 
-import { isString } from 'lodash';
-export { isString };
+import { isString, get } from 'lodash';
+export { isString, get };
