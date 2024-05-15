@@ -4,9 +4,6 @@
   "sourceRoot": "packages/helpers/src",
   "projectType": "library",
   "release": {
-    "changelog": {
-      "projectChangelogs": true
-    },
     "version": {
       "generatorOptions": {
         "packageRoot": "dist/{projectRoot}",
