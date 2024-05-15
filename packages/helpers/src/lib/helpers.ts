@@ -6,3 +6,7 @@ export function helpers(): string {
 
 export const isBoolean = (value: unknown): boolean =>
   typeof value === 'boolean';
+
+export const logVersion = (version: string): void => {
+  console.log(`Version: ${version}`);
+};
