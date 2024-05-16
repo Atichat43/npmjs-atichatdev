@@ -1,11 +1,10 @@
-name: Publish
+name: main-publish_to_npm
 
 on:
   workflow_dispatch:
   push:
-    tags:
-      - 'helpers@*.*.*'
-      - 'react-lib@*.*.*'
+    branches:
+      - main
 
 jobs:
   test:

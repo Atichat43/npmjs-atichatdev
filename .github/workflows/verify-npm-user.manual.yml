@@ -1,4 +1,4 @@
-name: Verify npm Authentication
+name: manual-verify_npm_user
 
 on:
   workflow_dispatch:
