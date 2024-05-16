@@ -1,4 +1,4 @@
-name: manual-verify_npm_user
+name: manual/verify_npm_user
 
 on:
   workflow_dispatch:

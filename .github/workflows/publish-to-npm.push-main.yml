@@ -1,4 +1,4 @@
-name: main-publish_to_npm
+name: push-main/publish-to-npm
 
 on:
   workflow_dispatch:

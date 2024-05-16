@@ -1,4 +1,4 @@
-name: pr-lint_test_build
+name: pr/lint-test-build
 
 on:
   pull_request:
