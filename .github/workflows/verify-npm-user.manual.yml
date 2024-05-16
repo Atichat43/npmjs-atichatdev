@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  verify-auth:
+  verify-npm-user:
     runs-on: ubuntu-latest
 
     permissions:

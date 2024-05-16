@@ -7,8 +7,7 @@ on:
       - main
 
 jobs:
-  test:
-    name: Publish
+  publish-to-npm:
     runs-on: ubuntu-latest
     permissions:
       actions: read
