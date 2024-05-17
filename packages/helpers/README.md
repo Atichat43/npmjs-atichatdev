@@ -10,4 +10,4 @@ Run `nx build helpers` to build the library.
 
 Run `nx test helpers` to execute the unit tests via [Vitest](https://vitest.dev/).
 
-<!-- update as fix merge as commit -->
+<!-- update as fix -->
