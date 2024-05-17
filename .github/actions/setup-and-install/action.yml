@@ -24,3 +24,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm install --frozen-lockfile
+
+    - name: Nx report
+      shell: bash
+      run: pnpm nx report
