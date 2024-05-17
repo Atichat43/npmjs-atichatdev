@@ -1,6 +1,7 @@
 name: manual/cache-and-install-deps
 
-on: ['push', 'workflow_dispatch']
+on:
+  workflow_dispatch:
 
 jobs:
   cache-and-install-deps:
@@ -15,8 +16,8 @@ jobs:
         with:
           node-version: 20
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 8
           run_install: false
@@ -26,8 +27,8 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
