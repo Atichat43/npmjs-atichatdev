@@ -1,4 +1,4 @@
-name: pr/commitlint
+name: commitlint
 
 on:
   pull_request:
