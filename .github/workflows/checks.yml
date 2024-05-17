@@ -19,5 +19,3 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - run: pnpm nx affected -t lint test build
-
-      - run: pnpm nx release --dry-run

@@ -70,15 +70,6 @@
           }
         }
       }
-    },
-    "changelog": {
-      "projectChangelogs": {
-        "renderOptions": {
-          "commitReferences": true,
-          "versionTitleDate": true,
-          "authors": false
-        }
-      }
     }
   },
   "plugins": [
