@@ -1,4 +1,4 @@
-name: push-main/publish-to-npm
+name: push-main
 
 on:
   workflow_dispatch:
@@ -15,25 +15,11 @@ jobs:
       id-token: write # needed for provenance data generation
     timeout-minutes: 15
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
-      - run: pnpm install --frozen-lockfile
-
-      - uses: nrwl/nx-set-shas@v4
-
-      - run: pnpm nx run-many -t build -p helpers react-lib
+      - uses: ./.github/actions/setup-and-install
 
       - name: Configure npm for authentication
         run: |
@@ -44,6 +30,10 @@ jobs:
         run: npm whoami
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm nx run-many -t build -p helpers react-lib
 
       - name: Publish packages
         run: pnpm nx release publish -p helpers react-lib

@@ -1,0 +1,21 @@
+name: checks
+
+on:
+  pull_request:
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/setup-and-install
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm exec nx affected -t lint test build
