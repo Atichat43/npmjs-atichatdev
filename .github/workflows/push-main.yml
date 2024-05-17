@@ -36,7 +36,7 @@ jobs:
       - run: pnpm nx run-many -t build -p helpers react-lib
 
       - name: Publish packages
-        run: pnpm nx release publish -p helpers react-lib
+        run: pnpm nx release -y -p helpers react-lib
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
