@@ -24,12 +24,12 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   /* Run your local dev server before starting the tests */
-  webServer: {
-    url: baseURL,
-    cwd: workspaceRoot,
-    command: 'npx nx serve react-app',
-    reuseExistingServer: !process.env.CI,
-  },
+  // webServer: {
+  //   url: baseURL,
+  //   cwd: workspaceRoot,
+  //   command: 'npx nx serve react-app',
+  //   reuseExistingServer: !process.env.CI,
+  // },
   projects: [
     {
       name: 'chromium',
