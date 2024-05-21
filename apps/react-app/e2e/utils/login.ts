@@ -5,9 +5,16 @@ export async function login(
   username?: string,
   password?: string
 ): Promise<void> {
-  await page.locator('[data-test="email"]').fill(username as string);
-  await page.locator('[data-test="password"]').fill(password as string);
-  await page.locator('[data-test="login-submit"]').click();
+  const BASE_URL = process.env.BASE_URL;
+  const AUTHORIZE_URL = process.env.AUTHORIZE_URL;
 
-  await page.waitForURL('**/account**');
+  await page.waitForURL(`${AUTHORIZE_URL}*`, { timeout: 10000 });
+
+  await page
+    .getByPlaceholder('username, Email or phone')
+    .fill(username as string);
+  await page.getByPlaceholder('Password').fill(password as string);
+  await page.locator('[type=submit]').click();
+
+  await page.waitForURL(`${BASE_URL}/*`, { timeout: 10000 });
 }

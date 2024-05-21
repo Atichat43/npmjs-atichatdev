@@ -20,13 +20,10 @@ async function globalSetup(config: FullConfig): Promise<void> {
     const page = await browser.newPage();
 
     await page.goto(baseURL as string);
-    await expect(
-      page.getByRole('link', { name: 'Practice Software Testing -' })
-    ).toBeVisible();
-
-    await page.locator('[data-test="nav-sign-in"]').click();
 
     await login(page, username, password);
+
+    await expect(page.getByTestId('avatar')).toBeVisible();
 
     await page.context().storageState({ path: storageState as string });
     await browser.close();

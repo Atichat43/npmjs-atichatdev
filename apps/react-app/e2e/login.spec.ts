@@ -1,17 +1,16 @@
 import { test, expect } from '@playwright/test';
+import { login } from './utils/login';
 
 test.describe('Login Feature', () => {
-  test('Login', async ({ page }) => {
-    await page.goto('https://practicesoftwaretesting.com/#/auth/login');
+  // This test will fail because the login process has been completed in the global setup, so the user cannot go to the login page.
+  test.skip('Login', async ({ page }) => {
+    const username = process.env.USERNAME;
+    const password = process.env.PASSWORD;
 
-    await page
-      .locator('[data-test="email"]')
-      .fill('customer@practicesoftwaretesting.com');
-    await page.locator('[data-test="password"]').fill('welcome01');
-    await page.locator('[data-test="login-submit"]').click();
+    await page.goto('/login');
 
-    await expect(page.locator('[data-test="page-title"]')).toContainText(
-      'My account'
-    );
+    await login(page, username, password);
+
+    await expect(page.getByTestId('avatar')).toBeVisible();
   });
 });
