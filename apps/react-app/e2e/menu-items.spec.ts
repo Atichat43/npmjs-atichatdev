@@ -1,10 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { ready } from './utils/ready';
 
 test.describe('menu items', () => {
   test('should have the correct menu items', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.getByTestId('avatar')).toBeVisible({ timeout: 10000 });
+    await ready(page);
 
     await expect(page.getByRole('button', { name: 'แคมเปญ' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'หน้าร้าน' })).toBeVisible();
