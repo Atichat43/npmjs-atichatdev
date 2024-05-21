@@ -18,7 +18,7 @@ jobs:
 
       # - run: find dist -type f
 
-      - run: ls -a
+      # - run: ls -a
 
       # - run: pnpm nx run-many -t e2e
 
