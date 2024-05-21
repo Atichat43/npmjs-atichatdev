@@ -25,6 +25,10 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
+    - name: Install Playwright Browsers
+      shell: bash
+      run: npx playwright install --with-deps
+
     - name: Nx report
       shell: bash
       run: pnpm nx report

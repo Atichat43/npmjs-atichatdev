@@ -1,0 +1,23 @@
+name: playwright
+
+on:
+  pull_request:
+
+jobs:
+  e2e-playwright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/setup-and-install
+
+      - run: pnpm nx run-many -t e2e
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 1
