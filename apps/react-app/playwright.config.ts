@@ -17,7 +17,8 @@ const baseURL = process.env['BASE_URL'] || 'http://localhost:4200';
  */
 export default defineConfig({
   ...nxE2EPreset(__filename, { testDir: './e2e' }),
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  globalSetup: require.resolve('./e2e/setup/global.setup.ts'),
+
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -29,6 +30,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
+    storageState: '/tmp/state.json',
   },
   /* Run your local dev server before starting the tests */
   // webServer: {
