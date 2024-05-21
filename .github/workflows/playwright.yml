@@ -1,10 +1,7 @@
-name: wip-playwright
+name: playwright
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - ci/add-e2e-playwright
+  pull_request:
 
 jobs:
   e2e-playwright:
