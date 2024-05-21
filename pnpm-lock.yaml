@@ -33,6 +33,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.2.2
         version: 19.2.2
+      '@commitlint/types':
+        specifier: ^19.0.3
+        version: 19.0.3
       '@nx/devkit':
         specifier: 19.0.3
         version: 19.0.3(nx@19.0.3)
