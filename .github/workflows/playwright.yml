@@ -16,15 +16,16 @@ jobs:
 
       - uses: ./.github/actions/setup-and-install
 
-      # - run: find dist -type f
+      - run: pnpm nx run-many -t e2e
 
-      # - run: ls -a
+      - run: ls -a
 
-      # - run: pnpm nx run-many -t e2e
+      - run: |
+          if [ -d dist ]; then find dist -type f; else echo "dist/ directory does not exist."; fi
 
-      # - uses: actions/upload-artifact@v4
-      #   if: ${{ !cancelled() }}
-      #   with:
-      #     name: playwright-report
-      #     path: playwright-report/
-      #     retention-days: 1
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 1
