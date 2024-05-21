@@ -16,7 +16,7 @@ jobs:
 
       - uses: ./.github/actions/setup-and-install
 
-      - run: find dist -type f
+      # - run: find dist -type f
 
       - run: ls -a
 
