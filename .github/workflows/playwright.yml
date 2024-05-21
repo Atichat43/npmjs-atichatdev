@@ -16,9 +16,6 @@ jobs:
 
       - uses: ./.github/actions/setup-and-install
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
       - run: pnpm nx run-many -t e2e
 
       - uses: actions/upload-artifact@v4
