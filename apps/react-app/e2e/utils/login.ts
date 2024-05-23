@@ -7,8 +7,9 @@ export async function login(
 ): Promise<void> {
   const BASE_URL = process.env.BASE_URL;
   const AUTHORIZE_URL = process.env.AUTHORIZE_URL;
+  const timeout = 1000 * 60 * 5; // 5 minutes
 
-  await page.waitForURL(`${AUTHORIZE_URL}*`, { timeout: 30000 });
+  await page.waitForURL(`${AUTHORIZE_URL}*`, { timeout });
 
   await page
     .getByPlaceholder('username, Email or phone')
@@ -16,5 +17,5 @@ export async function login(
   await page.getByPlaceholder('Password').fill(password as string);
   await page.locator('[type=submit]').click();
 
-  await page.waitForURL(`${BASE_URL}/*`, { timeout: 30000 });
+  await page.waitForURL(`${BASE_URL}/*`, { timeout });
 }
