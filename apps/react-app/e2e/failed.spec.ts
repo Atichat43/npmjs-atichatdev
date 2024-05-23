@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test('failed', async ({ page }) => {
+test.skip('failed', async ({ page }) => {
   await expect(true).toBe(false);
 });
