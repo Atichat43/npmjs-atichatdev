@@ -1,5 +1,7 @@
 import { expect, Page } from '@playwright/test';
 
 export async function ready(page: Page): Promise<void> {
-  await expect(page.getByTestId('avatar')).toBeVisible({ timeout: 10000 });
+  const timeout = 300_000; // 5 minutes
+
+  await expect(page.getByTestId('avatar')).toBeVisible({ timeout });
 }

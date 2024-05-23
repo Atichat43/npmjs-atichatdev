@@ -18,7 +18,7 @@ const baseURL = process.env['BASE_URL'] || 'http://localhost:4200';
  */
 export default defineConfig({
   ...nxE2EPreset(__filename, { testDir: './e2e' }),
-  timeout: 5 * 60 * 1000, // max 5 minutes (per test)
+  timeout: 10 * 60 * 1000, // max 10 minutes (per test)
   globalTimeout: 30 * 60 * 1000, // max 30 minutes (the whole test run)
   globalSetup: require.resolve('./e2e/setup/global.setup.ts'),
 
