@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { ready } from './utils/ready';
 
 test.describe('menu items', () => {
-  test.skip('should have the correct menu items', async ({ page }) => {
+  test('should have the correct menu items', async ({ page }) => {
     await page.goto('/');
 
     await ready(page);

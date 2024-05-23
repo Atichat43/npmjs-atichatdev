@@ -18,7 +18,9 @@ const baseURL = process.env['BASE_URL'] || 'http://localhost:4200';
  */
 export default defineConfig({
   ...nxE2EPreset(__filename, { testDir: './e2e' }),
-  // globalSetup: require.resolve('./e2e/setup/global.setup.ts'),
+  timeout: 5 * 60 * 1000, // max 5 minutes (per test)
+  globalTimeout: 30 * 60 * 1000, // max 30 minutes (the whole test run)
+  globalSetup: require.resolve('./e2e/setup/global.setup.ts'),
 
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -31,9 +33,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    storageState: existsSync('/tmp/atichatdev-playwright-state.json')
-      ? '/tmp/atichatdev-playwright-state.json'
-      : undefined,
+    storageState: '/tmp/atichatdev-playwright-state.json',
   },
   /* Run your local dev server before starting the tests */
   // webServer: {
