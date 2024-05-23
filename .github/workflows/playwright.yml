@@ -19,9 +19,11 @@ jobs:
       - run: pnpm nx run-many -t e2e
 
       - run: ls -a
+        if: always()
 
       - run: |
           if [ -d dist ]; then find dist -type f; else echo "dist/ directory does not exist."; fi
+        if: always()
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
