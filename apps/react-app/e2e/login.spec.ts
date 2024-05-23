@@ -3,7 +3,7 @@ import { login } from './utils/login';
 
 test.describe('Login Feature', () => {
   // this test will failed, because the login process has completed in the global setup, so the user cannot go to the login page
-  test.skip('Login', async ({ page }) => {
+  test('Login', async ({ page }) => {
     const username = process.env.USERNAME;
     const password = process.env.PASSWORD;
 

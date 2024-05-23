@@ -2,6 +2,9 @@ name: playwright
 
 on:
   pull_request:
+  push:
+    branches:
+      - e2e/onex-portal
 
 jobs:
   e2e-playwright:
@@ -16,6 +19,7 @@ jobs:
       - run: pnpm nx run-many -t e2e
 
       - uses: ./.github/actions/debug
+        if: always()
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
