@@ -7,8 +7,7 @@ export async function login(
 ): Promise<void> {
   const BASE_URL = process.env.BASE_URL;
   const AUTHORIZE_URL = process.env.AUTHORIZE_URL;
-  // 5 minutes
-  const timeout = 300000;
+  const timeout = 300000; // 5 minutes
 
   page.setDefaultTimeout(timeout);
   page.setDefaultNavigationTimeout(timeout);
@@ -22,4 +21,5 @@ export async function login(
   await page.locator('[type=submit]').click();
 
   await page.waitForURL(`${BASE_URL}/*`, { timeout });
+  await page.waitForSelector('[data-testid=avatar]', { timeout });
 }
