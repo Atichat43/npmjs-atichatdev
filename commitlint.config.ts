@@ -9,6 +9,7 @@ const Configuration: UserConfig = {
       [
         'build',
         'chore',
+        'cleanup',
         'ci',
         'docs',
         'feat',
