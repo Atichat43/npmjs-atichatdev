@@ -10,6 +10,9 @@ export async function login(
   // 5 minutes
   const timeout = 300000;
 
+  page.setDefaultTimeout(timeout);
+  page.setDefaultNavigationTimeout(timeout);
+
   await page.waitForURL(`${AUTHORIZE_URL}*`, { timeout });
 
   await page
