@@ -1,0 +1,16 @@
+name: Debug
+description: Debugging Action
+
+runs:
+  using: composite
+  steps:
+    - name: List files in the repository
+      run: ls -a
+      shell: bash
+      if: always()
+
+    - name: List files in the dist/ directory
+      run: |
+        if [ -d dist ]; then find dist -type f; else echo "dist/ directory does not exist."; fi
+      shell: bash
+      if: always()
