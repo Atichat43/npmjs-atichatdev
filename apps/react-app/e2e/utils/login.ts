@@ -7,7 +7,8 @@ export async function login(
 ): Promise<void> {
   const BASE_URL = process.env.BASE_URL;
   const AUTHORIZE_URL = process.env.AUTHORIZE_URL;
-  const timeout = 1000 * 60 * 5; // 5 minutes
+  // 5 minutes
+  const timeout = 300000;
 
   await page.waitForURL(`${AUTHORIZE_URL}*`, { timeout });
 
